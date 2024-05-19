@@ -17,13 +17,18 @@ import { useContext, useEffect } from "react";
 import { ShopContext } from "./Context/ShopContext";
 import Collections from "./Pages/Collections";
 import Offers from "./Pages/Offers";
+
+import MainComponent from "./Components/MainComponent";
+
+
 function App() {
   const { theme } = useContext(ShopContext);
   return (
-    <div className={`${theme}_app`}>
+    <div className={`${theme}_app`}> 
       <BrowserRouter>
         <Navbar />
         <Routes>
+        <Route path="/categories" element={<MainComponent />} />
           <Route path="/" element={<Shop />} />
           <Route
             path="/men"
@@ -54,4 +59,7 @@ function App() {
   );
 }
 
+
 export default App;
+
+
